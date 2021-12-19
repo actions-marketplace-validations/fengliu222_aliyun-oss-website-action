@@ -33,3 +33,14 @@ func IsImage(filename string) bool {
 		return false
 	}()
 }
+
+// IsImage is used to determine if a file is image
+func IsPageData(filename string) bool {
+	return func() bool {
+		isPageData :=  strings.Contains(path,"page-data")
+		if isPageData {
+			return true
+		}
+		return false
+	}()
+}
