@@ -13,8 +13,8 @@ deploy website on aliyun OSS(Alibaba Cloud OSS)
 ## Usage
 
 ```yml
-    - name: upload files to OSS
-      uses: fangbinwei/aliyun-oss-website-action@v1
+   - name: aliyun-oss-website-action-for-gatsby
+      uses: fengliu222/aliyun-oss-website-action@v0.0.3
       with:
           accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
           accessKeySecret: ${{ secrets.ACCESS_KEY_SECRET }}
