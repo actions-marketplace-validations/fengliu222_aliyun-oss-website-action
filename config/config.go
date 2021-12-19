@@ -48,7 +48,7 @@ func init() {
 	HTMLCacheControl = utils.Getenv("HTML_CACHE_CONTROL", "public, max-age=0, must-revalidate")
 	ImageCacheControl = utils.Getenv("IMAGE_CACHE_CONTROL", "public, max-age=31536000, immutable")
 	OtherCacheControl = utils.Getenv("OTHER_CACHE_CONTROL", "public, max-age=31536000, immutable")
-	PageDataCacheControl = utils.Getenv("OTHER_CACHE_CONTROL", "public, max-age=0, must-revalidate")
+	PageDataCacheControl = utils.Getenv("PAGE_DATA_CACHE_CONTROL", "public, max-age=0, must-revalidate")
 
 	currentPath, err := os.Getwd()
 	if err != nil {

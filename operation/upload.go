@@ -56,7 +56,7 @@ func UploadObjects(root string, bucket *oss.Bucket, records <-chan utils.FileInf
 
 func getHTTPHeader(item *utils.FileInfoType) []oss.Option {
 	return []oss.Option{
-		getCacheControlOption(item.Info.Name(), item.Path),
+		getCacheControlOption(item.Info.Name(), item.PathOSS),
 	}
 }
 
@@ -69,6 +69,7 @@ func getCacheControlOption(filename string, path string) oss.Option {
 		// 10 days
 		value = config.ImageCacheControl
 	} else if utils.IsPageData(path) {
+		fmt.Printf("current path: %s\n", path)
 		value = config.PageDataCacheControl
 	} else {
 		// static assets like .js .css, use contentHash in file name, so html can update these files.
