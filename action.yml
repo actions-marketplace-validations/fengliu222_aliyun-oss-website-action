@@ -1,6 +1,6 @@
-name: 'aliyun-oss-website-action'
-description: 'Deploy your static website on aliyun OSS'
-author: 'Binwei Fang <fangbinwei@yeah.net>'
+name: 'aliyun-oss-website-action-for-gatsby'
+description: 'Deploy your gatsby website on aliyun OSS'
+author: 'Docacola <444984@qq.com>'
 branding:
   icon: 'upload'
   color: 'gray-dark'
@@ -42,15 +42,19 @@ inputs:
   htmlCacheControl:
     description: 'Cache-Control for HTML'
     required: false
-    default: 'no-cache'
+    default: 'public, max-age=0, must-revalidate'
   imageCacheControl:
     description: 'Cache-Control for image'
     required: false
-    default: 'max-age=864000'
+    default: 'public, max-age=31536000, immutable'
+  pageDataCacheControl:
+    description: 'Cache-Control for page-data'
+    required: false
+    default: 'public, max-age=0, must-revalidate'
   otherCacheControl:
     description: 'Cache-Control for other files'
     required: false
-    default: 'max-age=2592000'
+    default: 'public, max-age=31536000, immutable'
 runs:
   using: 'docker'
   image: 'Dockerfile'
